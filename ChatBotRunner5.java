@@ -24,6 +24,8 @@ public class ChatBotRunner5
    System.out.println (maggie.getResponse(statement));
    statement = in.nextLine();
   }
+  
+  System.out.println (maggie.getGoodbye());
  }
 
 }
