@@ -58,6 +58,24 @@ public class ChatBot5
   {
     response = "Tell me more about your pets.";
   }
+  else if (statement.indexOf("maybe") >=0
+      || statement.indexOf("I don't know") >= 0
+      || statement.indexOf("I'm not sure") >= 0
+      || statement.indexOf("I can't decide") >= 0)
+   {
+  response = "You are being very indecisive.";
+ } 
+ else if (statement.indexOf("tired") >=0
+      || statement.indexOf("stressed") >= 0
+      || statement.indexOf("sad") >= 0
+      || statement.indexOf("unhappy") >= 0
+      || statement.indexOf("upset") >= 0
+      || statement.indexOf("worried") >= 0
+      || statement.indexOf("anoyed") >= 0
+      || statement.indexOf("mad") >= 0)
+ {
+  response = "You sound sad. Do you want to tell me why?";
+ }
 
   // Responses which require transformations
   else if (findKeyword(statement, "I want to", 0) >= 0)
@@ -309,7 +327,10 @@ public class ChatBot5
  private String [] randomResponses = {"Interesting, tell me more",
    "Hmmm.",
    "Do you really think so?",
-   "You don't say."
- };
+   "You don't say.",
+   "are you sure about that.",
+   "let's change the subject."
+   
+ }
  
 }
