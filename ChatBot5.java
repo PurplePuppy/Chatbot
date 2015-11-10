@@ -281,10 +281,22 @@ public class ChatBot5
   return randomResponses [r.nextInt(randomResponses.length)];
  }
  
- private String [] randomResponses = {"Interesting, tell me more",
+ private String [] randomResponses = {
+   "Interesting, tell me more",
    "Hmmm.",
    "Do you really think so?",
    "You don't say."
  };
  
-}
+ public String getGoodbye()
+ {
+   int i = (int)(Math.random()*3);
+   return randomGoodbyes[i];
+ }
+ 
+ private String [] randomGoodbyes = {
+   "Goodbye",
+   "See you later, alligator",
+   "Bye"
+ };
+ }
