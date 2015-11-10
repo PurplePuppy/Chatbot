@@ -49,6 +49,15 @@ public class ChatBot5
   {
    response = "Tell me more about your family.";
   }
+   else if (findKeyword(statement, "dog") >=0
+    || findKeyword(statement, "cat") >= 0
+    || findKeyword(statement, "fish") >= 0
+    || findKeyword(statement, "snake") >= 0
+    || findKeyword(statement, "hampster") >= 0
+    || findKeyword(statement, "rabbit") >= 0)
+  {
+    response = "Tell me more about your pets.";
+  }
 
   // Responses which require transformations
   else if (findKeyword(statement, "I want to", 0) >= 0)
@@ -137,6 +146,22 @@ public class ChatBot5
   int psn = findKeyword (statement, "I want", 0);
   String restOfStatement = statement.substring(psn + 6).trim();
   return "Would you really be happy if you had " + restOfStatement + "?";
+ }
+ 
+ private String transformINeedStatement(String statement)
+ {
+  //  Remove the final period, if there is one
+  statement = statement.trim();
+  String lastChar = statement.substring(statement
+    .length() - 1);
+  if (lastChar.equals("."))
+  {
+   statement = statement.substring(0, statement
+     .length() - 1);
+  }
+  int psn = findKeyword (statement, "I need", 0);
+  String restOfStatement = statement.substring(psn + 6).trim();
+  return "Why do you need " + restOfStatement + "?";
  }
  
  /**
